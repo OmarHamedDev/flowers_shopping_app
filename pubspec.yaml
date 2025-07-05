@@ -12,7 +12,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  intl: ^0.20.2
   cupertino_icons: ^1.0.8
   # Metadata A powerful HTTP networking package, supports Interceptors,  Aborting and canceling a request, Custom adapters, Transformers, etc.
   dio:
@@ -33,7 +33,12 @@ dependencies:
   #    Flutter Secure Storage provides API to store data in secure storage. Keychain is used in iOS, KeyStore based solution is used in Android
   flutter_secure_storage: ^9.2.4
   flutter_screenutil:
-
+  shared_preferences:
+  cached_network_image:
+  flutter_easyloading:
+  flutter_localization:
+  google_fonts:
+  lottie:
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -70,7 +75,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  generate: true
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
