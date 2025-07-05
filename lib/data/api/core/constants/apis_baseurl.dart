@@ -1,4 +1,4 @@
 abstract class ApisBaseurl {
-  static const String baseUrl = 'https://api.example.com';
+  static const String baseUrl = 'https://flower.elevateegy.com/api/v1/';
   static const String apiVersion = '/v1';
 }

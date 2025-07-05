@@ -1,1 +1,4 @@
-abstract class ApisEndPoints {}
+abstract class ApisEndPoints {
+  static const String login = 'auth/signin';
+  static const String register = 'auth/signup';
+}
