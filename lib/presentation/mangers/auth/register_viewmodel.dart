@@ -19,8 +19,10 @@ class RegisterViewmodel extends Cubit<RegisterState> {
       TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
-  Future<void> registerUser() async {
+  bool validate = false;
+  int currentStep = 0;
+  Gender currentGender = Gender.male;
+  Future<void> _registerUser() async {
     emit(const RegisterLoading());
     AppUserEntity appUser = AppUserEntity(
       firstName: firstNameController.text,
@@ -39,4 +41,42 @@ class RegisterViewmodel extends Cubit<RegisterState> {
         emit(RegisterFailure(error.errorMessage));
     }
   }
+
+  void validateColorButton() {
+    if (firstNameController.text.isEmpty ||
+        lastNameController.text.isEmpty ||
+        emailController.text.isEmpty ||
+        passwordController.text.isEmpty ||
+        confirmPasswordController.text.isEmpty ||
+        phoneController.text.isEmpty) {
+      validate = false;
+    } else if (formKey.currentState == null ||
+        !formKey.currentState!.validate()) {
+      validate = false;
+    } else {
+      validate = true;
+    }
+    emit(const ValidateColorButtonState());
+  }
+
+  void nextStep() {
+    if (currentStep < 1) {
+      currentStep++;
+      emit(const ValidateColorButtonState());
+    } else {
+      _registerUser();
+    }
+  }
+
+  void previousStep() {
+    if (currentStep > 0) {
+      currentStep--;
+      emit(const ValidateColorButtonState());
+    }
+  }
+}
+
+enum Gender {
+  male,
+  female,
 }

@@ -38,6 +38,7 @@ dependencies:
   flutter_easyloading:
   flutter_localization:
   google_fonts:
+  pretty_dio_logger:
   lottie:
 dev_dependencies:
   flutter_test:
@@ -106,3 +107,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+  assets:
+    - assets/
+    - assets/images/

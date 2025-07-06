@@ -16,3 +16,7 @@ class RegisterFailure extends RegisterState {
   final String error;
   const RegisterFailure(this.error);
 }
+
+class ValidateColorButtonState extends RegisterState {
+  const ValidateColorButtonState();
+}

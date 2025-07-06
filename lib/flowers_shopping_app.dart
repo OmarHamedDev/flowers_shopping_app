@@ -1,3 +1,4 @@
+import 'package:flowers_shopping_app/config/routes/routes_name.dart';
 import 'package:flowers_shopping_app/core/styles/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -22,21 +23,7 @@ class FlowersShoppingApp extends StatelessWidget {
       navigatorKey: navKey,
       builder: EasyLoading.init(),
       onGenerateRoute: AppRoute.onGenerateRoute,
-      initialRoute: '/',
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Flowers Shopping App')),
-        body: const Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Welcome to the Flowers Shopping App!',
-                style: TextStyle(fontSize: 24),
-              ),
-            ],
-          ),
-        ),
-      ),
+      initialRoute: RoutesName.onboardingView,
     );
   }
 }

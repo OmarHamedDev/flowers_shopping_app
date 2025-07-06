@@ -7,8 +7,9 @@ import 'core/styles/utils/bloc_observer/bloc_observer.dart';
 import 'flowers_shopping_app.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   configLoading();
-  await configureDependencies();
+  configureDependencies();
   Bloc.observer = MyBlocObserver();
   runApp(const FlowersShoppingApp());
 }

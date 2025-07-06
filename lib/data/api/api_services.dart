@@ -10,6 +10,7 @@ import 'core/constants/apis_baseurl.dart';
 
 part 'api_services.g.dart';
 
+@singleton
 @injectable
 @RestApi(baseUrl: ApisBaseurl.baseUrl)
 abstract class ApiServices {
